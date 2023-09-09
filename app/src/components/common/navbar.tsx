@@ -16,14 +16,14 @@ export default function Navbar() {
             </a>
             <a
               href="projects"
-              tabIndex="-1"
+              tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Projects
             </a>
             <a
               href="contact"
-              tabIndex="-1"
+              tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Contact
