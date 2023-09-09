@@ -3,7 +3,7 @@ import Hamburger from "../../icons/hambuger";
 
 export default function Navbar() {
   return (
-    <div className="navbar navbar-sticky">
+    <div className="navbar navbar-floating">
       <div className="navbar-start">
         <div className="dropdown">
           <label className="btn my-2" tabIndex="0">
@@ -24,7 +24,9 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="navbar-item">Edwins Website</a>
+        <a href="/" className="navbar-item">
+          Edwins Website
+        </a>
       </div>
       <div className="navbar-end"></div>
     </div>
