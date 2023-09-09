@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className="navbar navbar-floating">
       <div className="navbar-start">
         <div className="dropdown">
-          <label className="btn my-2" tabIndex="0">
+          <label className="btn my-2" tabIndex={0}>
             <Hamburger />
           </label>
 
