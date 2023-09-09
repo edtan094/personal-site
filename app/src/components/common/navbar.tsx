@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className="navbar navbar-floating">
       <div className="navbar-start">
         <div className="dropdown">
-          <label className="btn my-2" tabIndex="0">
+          <label className="btn my-2" tabIndex={0}>
             <Hamburger />
           </label>
 
@@ -16,14 +16,14 @@ export default function Navbar() {
             </a>
             <a
               href="projects"
-              tabIndex="-1"
+              tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Projects
             </a>
             <a
               href="contact"
-              tabIndex="-1"
+              tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Contact
