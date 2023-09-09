@@ -30,7 +30,7 @@ const config: Config = {
         themeName: "dark",
         colorScheme: "dark",
         colors: {
-          primary: "#191970",
+          primary: "#007bff",
           backgroundPrimary: "#1a1a1a",
         },
       },

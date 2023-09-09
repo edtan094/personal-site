@@ -14,7 +14,7 @@ a.underline-link {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #007bff;
+  background-color: theme("colors.primary");
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease;
