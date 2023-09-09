@@ -22,5 +22,10 @@
     "rippleui": "^1.12.1",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^11.0.2",
+    "jest": "^29.6.4",
+    "jsdom": "^22.1.0"
   }
 }
