@@ -2,7 +2,9 @@ export default function Home() {
   return (
     <>
       <main>
-        <h2>Welcome to Edwin's Website</h2>
+        <div className="flex justify-center">
+          <h2>Hello, my name is Edwin welcome to my site</h2>
+        </div>
       </main>
     </>
   );

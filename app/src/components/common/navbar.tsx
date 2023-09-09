@@ -11,13 +11,21 @@ export default function Navbar() {
           </label>
 
           <div className="dropdown-menu dropdown-menu-bottom-right">
-            <a href="/about" className="dropdown-item text-sm">
+            <a href="/about" className="dropdown-item text-sm underline-link">
               About Me
             </a>
-            <a href="projects" tabIndex="-1" className="dropdown-item text-sm">
+            <a
+              href="projects"
+              tabIndex="-1"
+              className="dropdown-item text-sm underline-link"
+            >
               Projects
             </a>
-            <a href="contact" tabIndex="-1" className="dropdown-item text-sm">
+            <a
+              href="contact"
+              tabIndex="-1"
+              className="dropdown-item text-sm underline-link"
+            >
               Contact
             </a>
           </div>
