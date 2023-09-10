@@ -14,4 +14,4 @@ jobs:
       - name: Build app
         run: bun run build
       - name: Run tests
-        run: bun run test
+        run: bun run test --exit
