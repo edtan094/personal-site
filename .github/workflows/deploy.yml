@@ -24,4 +24,4 @@ jobs:
       - build
     steps:
       - name: Run tests
-        run: npm run test
+        run: npm test
