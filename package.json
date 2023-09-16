@@ -22,7 +22,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch"
+    "test": "jest"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.3",
