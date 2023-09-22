@@ -52,7 +52,7 @@
 name: Vercel Preview Deployment
 on:
   push:
-    branches:
+    branches-ignore:
       - main
 jobs:
   Deploy-Production:
