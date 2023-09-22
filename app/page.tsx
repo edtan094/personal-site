@@ -8,14 +8,11 @@ const query = gql`
   }
 `;
 
+export const revalidate = 5;
+
 export default async function Home() {
   const { data } = await getClient().query({
     query,
-    context: {
-      fetchOptions: {
-        next: { revalidate: 5 },
-      },
-    },
   });
   console.log("data", data);
   return (
