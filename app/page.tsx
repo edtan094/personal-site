@@ -15,7 +15,6 @@ export default async function Home() {
     query,
     fetchPolicy: "no-cache",
   });
-  console.log("data", data);
   return (
     <>
       <main>
