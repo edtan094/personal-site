@@ -14,6 +14,10 @@ const query = gql`
 
 export const revalidate = 5;
 
+interface IProject {
+  project_name: string;
+}
+
 export default async function Home() {
   const { data } = await getClient().query({
     query,
@@ -28,7 +32,7 @@ export default async function Home() {
         </div>
         <div>
           Here is my project.{" "}
-          {data.projects.map((project) => project.project_name)}
+          {data.projects.map((project: IProject) => project.project_name)}
         </div>
       </main>
     </>
