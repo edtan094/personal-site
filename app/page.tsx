@@ -13,6 +13,7 @@ export const revalidate = 5;
 export default async function Home() {
   const { data } = await getClient().query({
     query,
+    fetchPolicy: "no-cache",
   });
   console.log("data", data);
   return (
