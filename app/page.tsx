@@ -3,8 +3,12 @@ import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
 
 const query = gql`
-  query Now {
-    now(id: "1")
+  query MyQuery {
+    projects {
+      id
+      project_description
+      project_name
+    }
   }
 `;
 
@@ -15,13 +19,17 @@ export default async function Home() {
     query,
     fetchPolicy: "no-cache",
   });
+  console.log("data", data);
   return (
     <>
       <main>
         <div className="flex justify-center">
           <h2>Hello, my name is Edwin welcome to my site</h2>
         </div>
-        <div>The time is {data.now}</div>
+        <div>
+          Here is my project.{" "}
+          {data.projects.map((project) => project.project_name)}
+        </div>
       </main>
     </>
   );
