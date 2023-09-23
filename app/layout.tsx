@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./src/components/common/navbar";
+import { ApolloWrapper } from "@/lib/apollo-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} py-32 px-20`}>
-        <Navbar />
-        {children}
+        <ApolloWrapper>
+          <Navbar />
+          {children}
+        </ApolloWrapper>
       </body>
     </html>
   );
