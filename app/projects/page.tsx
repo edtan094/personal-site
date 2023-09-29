@@ -34,19 +34,7 @@ export default async function Project() {
   return (
     <div>
       Project
-      <div>
-        Here is my project.{" "}
-        {data.projects.map((project: IProject) => {
-          return (
-            <div key={project.id}>
-              {project.project_name}
-              {project.description}
-              {project.url_link}
-              {project.github_url_link}
-            </div>
-          );
-        })}
-      </div>
+      <div>{/* insert html struture here */}</div>
     </div>
   );
 }
