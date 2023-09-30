@@ -1,6 +1,10 @@
 import { getClient } from "@/lib/client";
-
 import { gql } from "@apollo/client";
+import Image from "next/image";
+import { IProject } from "../src/types/project.types";
+import Project2Image from "public/images/project2.png";
+import Project3Image from "public/images/project3.png";
+import ProjectItem from "../src/components/common/ProjectItem";
 
 const query = gql`
   query MyQuery {
@@ -11,30 +15,27 @@ const query = gql`
       description
       url_link
       github_url_link
+      image_link
     }
   }
 `;
 
 export const revalidate = 5;
 
-interface IProject {
-  id: number;
-  project_name: string;
-  description: string;
-  url_link: string;
-  github_url_link: string;
-}
-
 export default async function Project() {
   const { data } = await getClient().query({
     query,
     fetchPolicy: "no-cache",
   });
-  console.log("data", data);
+
   return (
     <div>
-      Project
-      <div>{/* insert html struture here */}</div>
+      {data.projects.map(async (project: IProject) => {
+        if (project.id === 2) {
+          return <ProjectItem project={project} image={Project2Image} />;
+        }
+        return <ProjectItem project={project} image={Project3Image} />;
+      })}
     </div>
   );
 }
