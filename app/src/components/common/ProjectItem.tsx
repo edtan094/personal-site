@@ -4,15 +4,14 @@ import { ComponentType } from "react";
 
 interface ProjectProps {
   project: IProject;
-  image: any;
 }
-export default function ProjectItem({ project, image }: ProjectProps) {
+export default function ProjectItem({ project }: ProjectProps) {
   return (
     <div className="flex justify-between">
       <div className="w-1/2">
         <Image
           alt={`${project.project_name} logo`}
-          src={image}
+          src={project.image_url}
           height={500}
           width={500}
         />

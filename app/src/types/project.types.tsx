@@ -4,5 +4,5 @@ export interface IProject {
   description: string;
   url_link: string;
   github_url_link: string;
-  image_link: string;
+  image_url: string;
 }
