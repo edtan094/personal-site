@@ -14,6 +14,7 @@ const query = gql`
       url_link
       github_url_link
       image_url
+      tech_stack
     }
   }
 `;
@@ -30,10 +31,6 @@ export default async function Project() {
     <div>
       {data.projects.map(async (project: IProject) => {
         return <ProjectItem project={project} />;
-        // if (project.id === 2) {
-        //   return <ProjectItem project={project} image={Project2Image} />;
-        // }
-        // return <ProjectItem project={project} image={Project3Image} />;
       })}
     </div>
   );
