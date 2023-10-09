@@ -30,7 +30,7 @@ export default async function Project() {
   return (
     <div>
       {data.projects.map(async (project: IProject) => {
-        return <ProjectItem project={project} />;
+        return <ProjectItem key={project.id} project={project} />;
       })}
     </div>
   );

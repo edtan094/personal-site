@@ -21,8 +21,12 @@ export default function ProjectItem({ project }: ProjectProps) {
             {project.project_name}
           </h2>
           <p>{project.description}</p>
-          {project.tech_stack.map((stack) => {
-            return <span className="badge">{stack}</span>;
+          {project.tech_stack.map((stack, index) => {
+            return (
+              <span key={index} className="badge">
+                {stack}
+              </span>
+            );
           })}
           <div className=" pt-5 flex justify-evenly">
             <a href={project.url_link} target="_blank">
