@@ -11,9 +11,6 @@ export default function Navbar() {
           </label>
 
           <div className="dropdown-menu dropdown-menu-bottom-right">
-            <a href="/about" className="dropdown-item text-sm underline-link">
-              About Me
-            </a>
             <a
               href="projects"
               tabIndex={-1}
