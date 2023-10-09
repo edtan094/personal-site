@@ -32,7 +32,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a href="/" className="navbar-item">
+        <a href="/" className="navbar-item text-xl">
           Edwins Website
         </a>
       </div>

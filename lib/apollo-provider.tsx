@@ -10,7 +10,10 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: "https://main--time-pav6zq.apollographos.net/graphql",
+    uri: process.env.HASURA_PROJECT_ENDPOINT,
+    headers: {
+      "x-hasura-access-key": process.env.HASURA_ADMIN_SECRET as string,
+    },
   });
 
   return new NextSSRApolloClient({
