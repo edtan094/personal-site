@@ -6,36 +6,35 @@ interface ProjectProps {
 }
 export default function ProjectItem({ project }: ProjectProps) {
   return (
-    <div className="flex justify-between pt-6">
-      <div className="w-1/2 flex justify-center">
-        <Image
+    <div className="flex flex-col md:flex-row justify-center items-center pt-6">
+      <div className="w-full md:w-1/3 text-center md:text-left mb-4 md:mb-0 flex justify-center">
+        <img
           alt={`${project.project_name} logo`}
           src={project.image_url}
-          height={300}
-          width={300}
+          height={200}
+          width={200}
+          className="mx-auto md:mx-0"
         />
       </div>
-      <div className="flex items-center w-1/2 p-8">
-        <div>
-          <h2 className=" text-xl text-primary text-center pb-2">
-            {project.project_name}
-          </h2>
-          <p>{project.description}</p>
-          {project.tech_stack.map((stack, index) => {
-            return (
-              <span key={index} className="badge">
-                {stack}
-              </span>
-            );
-          })}
-          <div className=" pt-5 flex justify-evenly">
-            <a href={project.url_link} target="_blank">
-              View Site
-            </a>
-            <a href={project.github_url_link} target="_blank">
-              View GitHub
-            </a>
-          </div>
+      <div className="w-full md:w-2/3 p-4 md:p-8">
+        <h2 className="text-xl text-center md:text-left pb-2 text-primary">
+          {project.project_name}
+        </h2>
+        <p>{project.description}</p>
+        <div className="pt-4">
+          {project.tech_stack.map((stack, index) => (
+            <span key={index} className="badge">
+              {stack}
+            </span>
+          ))}
+        </div>
+        <div className="pt-5 flex flex-col md:flex-row justify-around md:justify-around">
+          <a href={project.url_link} target="_blank" className="btn m-3">
+            View Site
+          </a>
+          <a href={project.github_url_link} target="_blank" className="btn m-3">
+            View GitHub
+          </a>
         </div>
       </div>
     </div>
