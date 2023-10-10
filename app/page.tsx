@@ -1,7 +1,27 @@
 import Image from "next/image";
-import HelloThere from "./src/images/hello-there.gif";
+import GitHub from "./src/images/github-mark.svg";
+import LinkedIn from "./src/images/LI-In-Bug.png";
+import Link from "next/link";
+import { gql } from "@apollo/client";
+import { getClient } from "@/lib/client";
+
+const query = gql`
+  query MyQuery {
+    about_me {
+      about_myself
+      hobby
+    }
+  }
+`;
+
+export const revalidate = 5;
 
 export default async function Home() {
+  const { data } = await getClient().query({
+    query,
+    fetchPolicy: "no-cache",
+  });
+  console.log("data", data);
   return (
     <>
       <main>
@@ -10,23 +30,34 @@ export default async function Home() {
             <h1 className="text-3xl md:text-5xl text-primary text-center">
               Edwin Tan
             </h1>
-            <div className="flex justify-center pt-5">
-              <Image
-                alt="hello there gif"
-                src={HelloThere}
-                height={300}
-                width={300}
-                className="mx-auto md:mx-0"
-              />
+            <div className="flex justify-center align-middle">
+              <Link href="https://github.com/edtan094" target="_blank">
+                <Image
+                  alt="github-icon"
+                  src={GitHub}
+                  height={35}
+                  width={35}
+                  className="m-2"
+                />
+              </Link>
+              <Link href="https://www.linkedin.com/in/etan094/" target="_blank">
+                <Image
+                  alt="linkedin-icon"
+                  src={LinkedIn}
+                  height={30}
+                  width={40}
+                  className="m-2"
+                />
+              </Link>
             </div>
           </div>
-          <div className="w-full md:w-1/2 pt-5 md:pt-0">
+          <div className="w-full md:w-1/3 pt-5 md:pt-0">
             <p>
-              Hello there! I currently hold the role of Front End Developer at
-              Applied Medical. In 2021, I made a pivotal career decision fueled
-              by my desire for more substantial challenges and growth. This led
-              me to discover web development, a field that intrigued me with its
-              blend of rewards and complexities. I enrolled in a comprehensive
+              Hello there! I am currently a Front End Developer at Applied
+              Medical. In 2021, I made a pivotal career decision fueled by my
+              desire for more substantial challenges and growth. This led me to
+              discover web development, a field that intrigued me with its blend
+              of rewards and complexities. I enrolled in a comprehensive
               three-month full stack web development bootcamp. Shortly
               thereafter, I secured my initial position as a Front End
               Developer. However, my thirst for knowledge and dedication to

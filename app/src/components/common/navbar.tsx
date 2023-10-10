@@ -1,5 +1,6 @@
 import React from "react";
 import Hamburger from "../../icons/hambuger";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -11,27 +12,27 @@ export default function Navbar() {
           </label>
 
           <div className="dropdown-menu dropdown-menu-bottom-right">
-            <a
+            <Link
               href="projects"
               tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Projects
-            </a>
-            <a
+            </Link>
+            <Link
               href="contact"
               tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
       <div className="navbar-center">
-        <a href="/" className="navbar-item text-xl">
+        <Link href="/" className="navbar-item text-xl">
           Edwins Website
-        </a>
+        </Link>
       </div>
       <div className="navbar-end"></div>
     </div>
