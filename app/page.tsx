@@ -19,6 +19,7 @@ const query = gql`
       position
       previous_position
       tech_stack
+      order
     }
   }
 `;
@@ -37,6 +38,7 @@ type WorkHistory = {
   previous_position: string[];
   tech_stack: string[];
   id: number;
+  order: number;
 };
 
 export default async function Home() {
@@ -45,7 +47,9 @@ export default async function Home() {
     fetchPolicy: "no-cache",
   });
   const aboutMeData: AboutMe = data.about_me[0];
-  const workHistory: WorkHistory[] = data.work_history;
+  const workHistory: WorkHistory[] = data.work_history.sort(
+    (a: { order: number }, b: { order: number }) => a.order - b.order
+  );
   return (
     <>
       <main>

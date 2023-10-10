@@ -14,6 +14,7 @@ const query = gql`
       github_url_link
       image_url
       tech_stack
+      order
     }
   }
 `;
@@ -28,9 +29,11 @@ export default async function Project() {
 
   return (
     <div>
-      {data.projects.map((project: IProject) => {
-        return <ProjectItem key={project.id} project={project} />;
-      })}
+      {data.projects
+        .sort((a: { order: number }, b: { order: number }) => a.order - b.order)
+        .map((project: IProject) => {
+          return <ProjectItem key={project.id} project={project} />;
+        })}
     </div>
   );
 }
