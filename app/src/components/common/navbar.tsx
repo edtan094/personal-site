@@ -1,40 +1,47 @@
 import React from "react";
 import Hamburger from "../../icons/hambuger";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <div className="navbar navbar-floating">
       <div className="navbar-start">
-        <div className="dropdown">
+        {/* <div className="dropdown">
           <label className="btn my-2" tabIndex={0}>
             <Hamburger />
           </label>
 
           <div className="dropdown-menu dropdown-menu-bottom-right">
-            <a href="/about" className="dropdown-item text-sm underline-link">
-              About Me
-            </a>
-            <a
+            <Link
               href="projects"
               tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Projects
-            </a>
-            <a
+            </Link>
+            <Link
               href="contact"
               tabIndex={-1}
               className="dropdown-item text-sm underline-link"
             >
               Contact
-            </a>
+            </Link>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="navbar-center">
-        <a href="/" className="navbar-item text-xl">
-          Edwins Website
-        </a>
+        <Link
+          href="/"
+          className="dropdown-item text-sm underline-link text-center"
+        >
+          Home
+        </Link>
+        <Link
+          href="projects"
+          className="dropdown-item text-sm underline-link text-center"
+        >
+          Projects
+        </Link>
       </div>
       <div className="navbar-end"></div>
     </div>

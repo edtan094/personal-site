@@ -8,7 +8,7 @@ export default function ProjectItem({ project }: ProjectProps) {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center pt-6">
       <div className="w-full md:w-1/3 text-center md:text-left mb-4 md:mb-0 flex justify-center">
-        <img
+        <Image
           alt={`${project.project_name} logo`}
           src={project.image_url}
           height={200}
@@ -23,7 +23,7 @@ export default function ProjectItem({ project }: ProjectProps) {
         <p>{project.description}</p>
         <div className="pt-4">
           {project.tech_stack.map((stack, index) => (
-            <span key={index} className="badge">
+            <span key={index} className="badge bg-primary">
               {stack}
             </span>
           ))}
