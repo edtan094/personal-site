@@ -6,4 +6,5 @@ export interface IProject {
   github_url_link: string;
   image_url: string;
   tech_stack: string[];
+  order: number;
 }
