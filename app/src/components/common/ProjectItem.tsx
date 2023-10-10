@@ -23,7 +23,7 @@ export default function ProjectItem({ project }: ProjectProps) {
         <p>{project.description}</p>
         <div className="pt-4">
           {project.tech_stack.map((stack, index) => (
-            <span key={index} className="badge">
+            <span key={index} className="badge bg-primary">
               {stack}
             </span>
           ))}

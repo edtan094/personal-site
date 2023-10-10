@@ -1,6 +1,5 @@
 import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
-import Image from "next/image";
 import { IProject } from "../src/types/project.types";
 import ProjectItem from "../src/components/common/ProjectItem";
 
@@ -29,7 +28,7 @@ export default async function Project() {
 
   return (
     <div>
-      {data.projects.map(async (project: IProject) => {
+      {data.projects.map((project: IProject) => {
         return <ProjectItem key={project.id} project={project} />;
       })}
     </div>

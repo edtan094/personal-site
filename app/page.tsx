@@ -11,17 +11,41 @@ const query = gql`
       about_myself
       hobby
     }
+    work_history {
+      company_name
+      dates
+      description
+      id
+      position
+      previous_position
+      tech_stack
+    }
   }
 `;
-
 export const revalidate = 5;
+
+type AboutMe = {
+  about_myself: string;
+  hobby: string;
+};
+
+type WorkHistory = {
+  company_name: string;
+  dates: string;
+  description: string;
+  position: string;
+  previous_position: string[];
+  tech_stack: string[];
+  id: number;
+};
 
 export default async function Home() {
   const { data } = await getClient().query({
     query,
     fetchPolicy: "no-cache",
   });
-  console.log("data", data);
+  const aboutMeData: AboutMe = data.about_me[0];
+  const workHistory: WorkHistory[] = data.work_history;
   return (
     <>
       <main>
@@ -34,7 +58,7 @@ export default async function Home() {
               <Link href="https://github.com/edtan094" target="_blank">
                 <Image
                   alt="github-icon"
-                  src={GitHub}
+                  src="http://d2f1h64iia9ryb.cloudfront.net/github-mark.svg"
                   height={35}
                   width={35}
                   className="m-2"
@@ -43,7 +67,7 @@ export default async function Home() {
               <Link href="https://www.linkedin.com/in/etan094/" target="_blank">
                 <Image
                   alt="linkedin-icon"
-                  src={LinkedIn}
+                  src="http://d2f1h64iia9ryb.cloudfront.net/LI-In-Bug.png"
                   height={30}
                   width={40}
                   className="m-2"
@@ -52,52 +76,39 @@ export default async function Home() {
             </div>
           </div>
           <div className="w-full md:w-1/3 pt-5 md:pt-0">
-            <p>
-              Hello there! I am currently a Front End Developer at Applied
-              Medical. In 2021, I made a pivotal career decision fueled by my
-              desire for more substantial challenges and growth. This led me to
-              discover web development, a field that intrigued me with its blend
-              of rewards and complexities. I enrolled in a comprehensive
-              three-month full stack web development bootcamp. Shortly
-              thereafter, I secured my initial position as a Front End
-              Developer. However, my thirst for knowledge and dedication to
-              continuous improvement persistently drives me forward. This web
-              portfolio serves as a platform for showcasing my acquired skills,
-              as well as my exploration of new technologies beyond my
-              professional responsibilities.
-            </p>
-            <p className="pt-5">
-              Outside of work, I love working out, One Piece is my favorite
-              anime, and you might find me at some cool bar or restaurant trying
-              new foods
-            </p>
+            <p>{aboutMeData.about_myself}</p>
+            <p className="pt-5">{aboutMeData.hobby}</p>
           </div>
         </div>
         <div className="w-full md:flex">
           <div className="md:w-1/2"></div>
           <div className="md:w-1/2">
             <div className="md:w-1/2 pt-10 flex-col items-center justify-center">
-              <div className="flex flex-col">
-                <p>2022 - Present</p>
-                <p>Front End Developer - Applied Medical</p>
-                <p className="opacity-60">Junior Front End Developer</p>
-                <p className="pt-5 text-sm">
-                  Developed the front end interface for the company's internal
-                  web applications. Other responsibilities included writing unit
-                  tests and developing the front end team's CI/CD pipeline
-                </p>
-              </div>
-              <div className="flex flex-col pt-5">
-                <p>2021 - 2022</p>
-                <p>Teacher Aide for Bootcamp - LearningFuze</p>
-                <p className="pt-5 text-sm">
-                  Mentored and assisted students 10-15 students a week on HTML,
-                  CSS, JavaScript, Node, React, and PostgreSQL. Challenged
-                  students to think logically on reaching solutions by
-                  practicing pseudo-code. Code reviewed student's code to
-                  enforce and teach best practices
-                </p>
-              </div>
+              {workHistory.map((work) => {
+                return (
+                  <div className="flex flex-col pt-5" key={work.id}>
+                    <p>{work.dates}</p>
+                    <p>{`${work.position} - ${work.company_name}`}</p>
+                    {work.previous_position.map((previousPosition, index) => {
+                      return (
+                        <p key={index} className="opacity-60">
+                          {previousPosition}
+                        </p>
+                      );
+                    })}
+                    <p className="pt-5 text-sm">{work.description}</p>
+                    <div>
+                      {work.tech_stack.map((stack, index) => {
+                        return (
+                          <span key={index} className="badge bg-primary">
+                            {stack}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
