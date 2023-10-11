@@ -53,8 +53,8 @@ export default async function Home() {
   return (
     <>
       <main>
-        <div className="flex-none md:flex pb-5">
-          <div className="w-full md:w-1/2">
+        <div className="flex-none pb-5">
+          <div className="w-full">
             <h1 className="text-3xl md:text-5xl text-primary text-center">
               Edwin Tan
             </h1>
@@ -79,41 +79,38 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-          <div className="w-full md:w-1/3 pt-5 md:pt-0">
+          <div className="w-full pt-5 md:pt-0">
             <p>{aboutMeData.about_myself}</p>
             <p className="pt-5">{aboutMeData.hobby}</p>
           </div>
         </div>
         <div className="w-full md:flex">
-          <div className="md:w-1/2"></div>
-          <div className="md:w-1/2">
-            <div className="md:w-1/2 pt-10 flex-col items-center justify-center">
-              {workHistory.map((work) => {
-                return (
-                  <div className="flex flex-col pt-5" key={work.id}>
-                    <p>{work.dates}</p>
-                    <p>{`${work.position} - ${work.company_name}`}</p>
-                    {work.previous_position.map((previousPosition, index) => {
+          <div className="md:w- pt-10 flex-col items-center justify-center m-auto md:w-1/3">
+            {workHistory.map((work) => {
+              return (
+                <div className="flex flex-col pt-5" key={work.id}>
+                  <p>{work.dates}</p>
+                  <p>{`${work.position} - ${work.company_name}`}</p>
+                  {work.previous_position.map((previousPosition, index) => {
+                    return (
+                      <p key={index} className="opacity-60">
+                        {previousPosition}
+                      </p>
+                    );
+                  })}
+                  <p className="pt-5 text-sm">{work.description}</p>
+                  <div>
+                    {work.tech_stack.map((stack, index) => {
                       return (
-                        <p key={index} className="opacity-60">
-                          {previousPosition}
-                        </p>
+                        <span key={index} className="badge bg-primary p-1">
+                          {stack}
+                        </span>
                       );
                     })}
-                    <p className="pt-5 text-sm">{work.description}</p>
-                    <div>
-                      {work.tech_stack.map((stack, index) => {
-                        return (
-                          <span key={index} className="badge bg-primary">
-                            {stack}
-                          </span>
-                        );
-                      })}
-                    </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </main>
