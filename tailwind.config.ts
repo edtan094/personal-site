@@ -22,7 +22,7 @@ const config: Config = {
         themeName: "light",
         colorScheme: "light",
         colors: {
-          primary: "#235264",
+          primary: "#0D9488",
           backgroundPrimary: "#ffffff",
         },
       },
