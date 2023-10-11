@@ -54,7 +54,7 @@ export default async function Home() {
     <>
       <main>
         <div className="flex-none pb-5">
-          <div className="w-full">
+          <div className="w-full pb-5">
             <h1 className="text-3xl md:text-5xl text-primary text-center">
               Edwin Tan
             </h1>
