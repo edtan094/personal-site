@@ -1,6 +1,4 @@
 import Image from "next/image";
-import GitHub from "./src/images/github-mark.svg";
-import LinkedIn from "./src/images/LI-In-Bug.png";
 import Link from "next/link";
 import { gql } from "@apollo/client";
 import { getClient } from "@/lib/client";
