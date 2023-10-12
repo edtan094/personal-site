@@ -8,7 +8,10 @@ const modes = [
 ];
 
 const initialMode = modes.find((mode) => {
-  if (localStorage?.getItem("theme") === "dark") {
+  if (
+    typeof window !== "undefined" &&
+    localStorage?.getItem("theme") === "dark"
+  ) {
     return mode.name === "dark";
   } else {
     return mode.name === "light";
@@ -43,7 +46,10 @@ export default function ThemeSwitcher() {
   }
 
   useEffect(() => {
-    if (localStorage.getItem("theme") === "dark") {
+    if (
+      typeof window !== "undefined" &&
+      localStorage.getItem("theme") === "dark"
+    ) {
       let bodyElement = document.querySelector("body") as HTMLBodyElement;
       bodyElement.setAttribute("data-theme", "dark");
     }
