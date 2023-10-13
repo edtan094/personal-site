@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${inter.className} py-32 px-5 md:px-36 h-screen`}
-        data-theme="light"
+        data-theme="dark"
       >
         <ApolloWrapper>
           <Navbar />
