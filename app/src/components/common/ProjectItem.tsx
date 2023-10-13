@@ -29,7 +29,7 @@ export default function ProjectItem({ project }: ProjectProps) {
             </span>
           ))}
         </div>
-        <div className="pt-5 flex flex-col md:flex-row justify-around md:justify-around">
+        <div className="pt-5 flex flex-col md:flex-row justify-around md:justify-around w-40 md:w-96 m-auto">
           <Link
             href={project.url_link}
             target="_blank"
