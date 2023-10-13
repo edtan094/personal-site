@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { IProject } from "../../types/project.types";
+import Link from "next/link";
 
 interface ProjectProps {
   project: IProject;
@@ -29,12 +30,20 @@ export default function ProjectItem({ project }: ProjectProps) {
           ))}
         </div>
         <div className="pt-5 flex flex-col md:flex-row justify-around md:justify-around">
-          <a href={project.url_link} target="_blank" className="btn m-3">
+          <Link
+            href={project.url_link}
+            target="_blank"
+            className="btn m-3 border border-primary"
+          >
             View Site
-          </a>
-          <a href={project.github_url_link} target="_blank" className="btn m-3">
+          </Link>
+          <Link
+            href={project.github_url_link}
+            target="_blank"
+            className="btn m-3 border border-primary"
+          >
             View GitHub
-          </a>
+          </Link>
         </div>
       </div>
     </div>
