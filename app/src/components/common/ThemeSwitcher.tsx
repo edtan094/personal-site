@@ -10,11 +10,11 @@ const modes = [
 const initialMode = modes.find((mode) => {
   if (
     typeof window !== "undefined" &&
-    localStorage?.getItem("theme") === "dark"
+    localStorage?.getItem("theme") === "light"
   ) {
-    return mode.name === "dark";
-  } else {
     return mode.name === "light";
+  } else {
+    return mode.name === "dark";
   }
 })!;
 
