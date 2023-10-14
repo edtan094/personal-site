@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} py-32 px-5 md:px-36`}
+        className={`${inter.className} py-32 px-5 md:px-36 md:h-screen`}
         data-theme="dark"
       >
         <ApolloWrapper>
