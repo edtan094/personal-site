@@ -44,7 +44,6 @@ export default async function Home() {
     query,
     fetchPolicy: "no-cache",
   });
-  const aboutMeData: AboutMe = data.about_me[0];
   const workHistory: WorkHistory[] = data.work_history.sort(
     (a: { order: number }, b: { order: number }) => a.order - b.order
   );
@@ -76,10 +75,6 @@ export default async function Home() {
                 />
               </Link>
             </div>
-          </div>
-          <div className="w-full pt-5 md:pt-0">
-            <p>{aboutMeData.about_myself}</p>
-            <p className="pt-5">{aboutMeData.hobby}</p>
           </div>
         </div>
         <div className="w-full md:flex">
