@@ -78,8 +78,8 @@ export default async function Home() {
                 className=" rounded-[50%]"
                 alt="profile-picture"
                 src={data.picture[0].picture_url}
-                height={300}
-                width={300}
+                height={150}
+                width={150}
               />
             </div>
           </div>
