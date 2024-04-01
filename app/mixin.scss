@@ -1,0 +1,17 @@
+@mixin dots($count) {
+  $text-shadow: ();
+  @for $i from 0 through $count {
+    $hue: random() * 360;
+    $saturation: random() * 35 + 40;
+    $lightness: random() * 45 + 40;
+
+    $text-shadow: $text-shadow,
+      ((random()) * 3) +
+        em
+        ((random()) * 3) +
+        em
+        9px
+        hsla($hue, $saturation, $lightness, 0.9);
+  }
+  text-shadow: $text-shadow;
+}

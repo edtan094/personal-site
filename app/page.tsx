@@ -19,14 +19,12 @@ const query = gql`
       tech_stack
       order
     }
+    picture {
+      picture_url
+    }
   }
 `;
 export const revalidate = 5;
-
-type AboutMe = {
-  about_myself: string;
-  hobby: string;
-};
 
 type WorkHistory = {
   company_name: string;
@@ -74,6 +72,15 @@ export default async function Home() {
                   className="m-2"
                 />
               </Link>
+            </div>
+            <div className="flex justify-center mt-10">
+              <Image
+                className=" rounded-[50%]"
+                alt="profile-picture"
+                src={data.picture[0].picture_url}
+                height={300}
+                width={300}
+              />
             </div>
           </div>
         </div>

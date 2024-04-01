@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require("path");
+
 const nextConfig = {
   images: {
     domains: ["d2f1h64iia9ryb.cloudfront.net"],
@@ -10,6 +12,9 @@ const nextConfig = {
         pathname: "/*",
       },
     ],
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "app")],
   },
 };
 module.exports = nextConfig;
