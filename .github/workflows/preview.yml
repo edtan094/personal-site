@@ -1,54 +1,3 @@
-# name: deploy
-# on: [push, pull_request]
-# jobs:
-#   build:
-#     name: build-app
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout repo
-#         uses: actions/checkout@v3
-#       - name: Setup Node
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: "18"
-#       - name: Install dependencies
-#         run: npm install
-#       - name: Build app
-#         run: npm run build
-
-#   test:
-#     name: Run tests
-#     runs-on: ubuntu-latest
-
-#     needs:
-#       - build
-#     steps:
-#       - name: Checkout repo
-#         uses: actions/checkout@v3
-#       - name: Setup Node
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: "18"
-#       - name: Install dependencies
-#         run: npm install
-#       - name: Run tests
-#         run: npm test
-#   # for preview deployments
-#   deploy:
-#     name: Deploy to Vercel
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout repo
-#         uses: actions/checkout@v3
-#       - name: Install Vercel CLI
-#         run: npm install --global vercel@latest
-#       - name: Pull Vercel Environment Information
-#         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_DEPLOYMENT }}
-#       - name: Build Project Artifacts
-#         run: vercel build --token=${{ secrets.VERCEL_DEPLOYMENT }}
-#       - name: Deploy Project Artifacts to Vercel
-#         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_DEPLOYMENT }}
-
 name: Vercel Preview Deployment
 on:
   push:
@@ -58,7 +7,7 @@ jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
