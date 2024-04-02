@@ -10,8 +10,31 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Edwin Tan | Full Stack Developer",
   description: "Edwin's personal site",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    siteName: "Edwin Tan",
+    title: "Edwin Tan",
+    description: "Welcome to Edwin's personal website",
+    type: "website",
+    images: [
+      {
+        url: "/personal-site.png",
+        alt: "Edwin's personal website",
+        height: 1600,
+        width: 1800,
+      },
+    ],
+  },
+  keywords: [
+    "Edwin Tan",
+    "developer",
+    "software engineer",
+    "portfolio",
+    "personal website",
+  ],
 };
-
 export default function RootLayout({
   children,
 }: {
