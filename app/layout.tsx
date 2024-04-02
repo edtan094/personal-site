@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Edwin Tan",
     description: "Welcome to Edwin's personal website",
     type: "website",
-    images: ["/favicon.ico"],
+    images: ["/personal-site.png"],
   },
 };
 export default function RootLayout({
