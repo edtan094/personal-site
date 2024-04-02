@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./src/components/common/navbar";
 import { ApolloWrapper } from "@/lib/apollo-provider";
+import background from "./background.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} py-32 px-5 md:px-36 md:h-screen`}
-        data-theme="dark"
-      >
+      <body className={`${inter.className} py-32 px-5`} data-theme="dark">
+        <div className={background.background}></div>
         <ApolloWrapper>
           <Navbar />
           {children}

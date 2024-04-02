@@ -1,13 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Navbar() {
   return (
     <div className="navbar navbar-floating navbar-glass mt-0">
-      <div className="navbar-start">
-        <ThemeSwitcher />
-      </div>
+      <div className="navbar-start"></div>
       <div className="navbar-center">
         <Link
           href="/"

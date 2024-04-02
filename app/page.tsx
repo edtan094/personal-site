@@ -19,14 +19,12 @@ const query = gql`
       tech_stack
       order
     }
+    picture {
+      picture_url
+    }
   }
 `;
 export const revalidate = 5;
-
-type AboutMe = {
-  about_myself: string;
-  hobby: string;
-};
 
 type WorkHistory = {
   company_name: string;
@@ -44,13 +42,12 @@ export default async function Home() {
     query,
     fetchPolicy: "no-cache",
   });
-  const aboutMeData: AboutMe = data.about_me[0];
   const workHistory: WorkHistory[] = data.work_history.sort(
     (a: { order: number }, b: { order: number }) => a.order - b.order
   );
   return (
     <>
-      <main className="">
+      <main className="z-10">
         <div className="flex-none pb-5">
           <div className="w-full pb-5">
             <h1 className="text-3xl md:text-5xl text-primary text-center">
@@ -76,10 +73,15 @@ export default async function Home() {
                 />
               </Link>
             </div>
-          </div>
-          <div className="w-full pt-5 md:pt-0">
-            <p>{aboutMeData.about_myself}</p>
-            <p className="pt-5">{aboutMeData.hobby}</p>
+            <div className="flex justify-center mt-10">
+              <Image
+                className=" rounded-[50%]"
+                alt="profile-picture"
+                src={data.picture[0].picture_url}
+                height={150}
+                width={150}
+              />
+            </div>
           </div>
         </div>
         <div className="w-full md:flex">
