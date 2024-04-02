@@ -28,7 +28,7 @@ export default async function Project() {
   });
 
   return (
-    <div className="z-10">
+    <div>
       {data.projects
         .sort((a: { order: number }, b: { order: number }) => a.order - b.order)
         .map((project: IProject) => {

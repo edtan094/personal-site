@@ -46,7 +46,7 @@ export default function RootLayout({
         <div className={background.background}></div>
         <ApolloWrapper>
           <Navbar />
-          {children}
+          <div className="fixed">{children}</div>
         </ApolloWrapper>
       </body>
     </html>
