@@ -25,3 +25,8 @@ a.underline-link {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+.scrollable {
+  max-height: 100vh; /* Adjust this value as needed */
+  overflow-y: auto;
+}
