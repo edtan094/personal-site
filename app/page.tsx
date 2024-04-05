@@ -1,23 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { gql } from "@apollo/client";
-import { getClient } from "@/lib/client";
-
-const query = gql`
-  query PictureQuery {
-    picture {
-      picture_url
-    }
-  }
-`;
-
-export const revalidate = 5;
 
 export default async function Home() {
-  const { data } = await getClient().query({
-    query,
-    fetchPolicy: "no-cache",
-  });
   return (
     <>
       <main>
