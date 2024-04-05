@@ -23,7 +23,7 @@ export default async function Home() {
       <main>
         <div className="flex justify-center items-center h-[65vh]">
           <div>
-            <h1 className="text-primary text-[10px] md:text-lg lg:text-3xl typewriter font-[ui-monospace]">
+            <h1 className="text-primary text-[8px] md:text-lg lg:text-3xl typewriter font-[ui-monospace] py-5">
               My name is Edwin Tan and I am a Software Engineer
             </h1>
             <div className="flex justify-center align-middle">
