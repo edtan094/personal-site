@@ -28,7 +28,7 @@ export default async function Project() {
   });
 
   return (
-    <div className="scrollable">
+    <div>
       {data.projects
         .sort((a: { order: number }, b: { order: number }) => a.order - b.order)
         .map((project: IProject) => {

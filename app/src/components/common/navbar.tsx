@@ -13,6 +13,12 @@ export default function Navbar() {
           Home
         </Link>
         <Link
+          href="experience"
+          className="dropdown-item text-sm underline-link text-center"
+        >
+          Experience
+        </Link>
+        <Link
           href="projects"
           className="dropdown-item text-sm underline-link text-center"
         >
