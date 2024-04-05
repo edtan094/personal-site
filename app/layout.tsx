@@ -18,14 +18,7 @@ export const metadata: Metadata = {
     title: "Edwin Tan",
     description: "Welcome to Edwin's personal website",
     type: "website",
-    images: [
-      {
-        url: "/personal-site.png",
-        alt: "Edwin's personal website",
-        height: 1600,
-        width: 1800,
-      },
-    ],
+    images: ["/personal-site.png"],
   },
   keywords: [
     "Edwin Tan",
