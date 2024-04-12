@@ -35,7 +35,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} py-32 px-5`} data-theme="dark">
+      <body
+        className={`${inter.className} py-32 px-5 h-screen`}
+        data-theme="dark"
+      >
         <div className={background.background}></div>
         <ApolloWrapper>
           <Navbar />
