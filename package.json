@@ -2,7 +2,7 @@
   "name": "personal-site",
   "version": "0.1.0",
   "dependencies": {
-    "@apollo/client": "^3.8.0-rc.2",
+    "@apollo/client": "^3.10.1",
     "@apollo/experimental-nextjs-app-support": "^0.4.2",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
